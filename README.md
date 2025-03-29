@@ -1,69 +1,126 @@
-# Welcome to your Lovable project
 
-## Project info
+# GenAI Analytics Dashboard
 
-**URL**: https://lovable.dev/projects/f98712c3-337a-4f03-a129-c9c069a91619
+## Project Overview
 
-## How can I edit this code?
+GenAI Analytics is a React-based dashboard prototype that demonstrates a natural language interface for querying business data. This tool democratizes data insights across business units by allowing non-technical teams to ask complex questions in plain English and receive instant, visual results.
 
-There are several ways of editing your application.
+## Live Demo
 
-**Use Lovable**
+[View Live Demo](https://lovable.dev/projects/f98712c3-337a-4f03-a129-c9c069a91619)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f98712c3-337a-4f03-a129-c9c069a91619) and start prompting.
+## Features
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Natural Language Queries**: Ask business questions in plain English
+- **AI-Powered Suggestions**: Get query suggestions as you type
+- **Query History**: Track and reuse previous queries
+- **Visual Results**: Automatically visualized data in the most appropriate chart format
+- **Responsive Design**: Works seamlessly across desktop and mobile devices
 
-**Use your preferred IDE**
+## Technical Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Frontend Framework**: React.js with TypeScript
+- **State Management**: Redux Toolkit for efficient global state
+- **Styling**: Tailwind CSS with shadcn-ui components
+- **Data Visualization**: Recharts library
+- **Build Tool**: Vite
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Project Structure
 
-Follow these steps:
+```
+src/
+├── components/         # UI components
+│   ├── Dashboard.tsx   # Main dashboard layout
+│   ├── Header.tsx      # Application header
+│   ├── QueryInput.tsx  # Natural language query input with suggestions
+│   ├── QueryHistory.tsx # History of previous queries
+│   ├── ResultsDisplay.tsx # Data visualization component
+│   └── ui/             # shadcn UI components
+├── store/              # Redux store configuration
+│   ├── index.ts        # Store setup and configuration
+│   ├── querySlice.ts   # Query state management
+│   └── hooks.ts        # Custom Redux hooks
+├── pages/              # Application pages
+│   └── Index.tsx       # Main page wrapper
+└── App.tsx             # Application entry point
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## State Management Architecture
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+The application uses Redux Toolkit to manage global state with the following key slices:
 
-# Step 3: Install the necessary dependencies.
-npm i
+- **Query State**: Manages current query, history, and suggestions
+- **Results State**: Handles loading, error, and visualization states
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+The state flow follows this pattern:
+1. User inputs a query in natural language
+2. Query is dispatched to Redux store
+3. Simulated processing occurs (in a real implementation, this would call an API)
+4. Results are stored in Redux and displayed to the user
+
+## UI/UX Design
+
+The dashboard features a clean, modern interface with:
+
+- Simple input field prominently placed for accessibility
+- Intuitive suggestion system that appears as you type
+- Visual results that automatically select the most appropriate chart type
+- Chronological history that allows for quick query reuse
+- Responsive layout that works on both desktop and mobile devices
+
+## Code Quality Highlights
+
+- **Typed Components**: Full TypeScript implementation
+- **Reusable Components**: Modular design for maintainability
+- **Custom Hooks**: Abstracted Redux functionality
+- **Error Handling**: Graceful error states and recovery
+- **Responsive Design**: Mobile-first approach with Tailwind
+
+## Simulating AI Query Interaction
+
+The prototype simulates the AI query processing:
+
+- Suggestions appear as you type, mimicking real-time AI suggestions
+- Query processing includes randomized timing to simulate backend processing
+- Error states are randomly triggered to demonstrate robust error handling
+- Chart type is intelligently selected based on query content and data structure
+- Results are formatted in a way that would be expected from a real AI system
+
+## Development Setup
+
+### Prerequisites
+
+- Node.js (v16+)
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+
+# Navigate to project directory
+cd genai-analytics
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Future Enhancements
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Backend integration with actual AI processing
+- User authentication and personalized query history
+- Export functionality for charts and results
+- Advanced filtering and query refinement options
+- Integration with multiple data sources
 
-**Use GitHub Codespaces**
+## License
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+MIT
 
-## What technologies are used for this project?
+---
 
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/f98712c3-337a-4f03-a129-c9c069a91619) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+*This project was created as part of a frontend engineering challenge to demonstrate skills in React component structure, state management, UI/UX design, code quality, and creative simulation of AI interactions.*

@@ -1,4 +1,3 @@
-
 # GenAI Analytics Dashboard
 
 ## Project Overview
